@@ -126,6 +126,67 @@ def string_token_counter (s):
 		
 let_it_be = 'When I find myself in times of trouble Mother Mary comes to me Speaking words of wisdom let it be And in my hour of darkness she is standing right in front of me Speaking words of wisdom let it be Let it be let it be let it be let it be Whisper words of wisdom let it be And when the broken hearted people living in the world agree There will be an answer let it be For though they may be parted there is still a chance that they will see There will be an answer let it be Let it be let it be let it be let it be There will be an answer let it be Let it be let it be let it be let it be Whisper words of wisdom let it be Let it be let it be let it be let it be Whisper words of wisdom let it be And when the night is cloudy there is still a light that shines on me Shine until tomorrow let it be I wake up to the sound of music Mother Mary comes to me Speaking words of wisdom let it be Let it be let it be let it be yeah let it be There will be an answer let it be Let it be let it be let it be yeah let it be Whisper words of wisdom let it be'
 string_token_counter(let_it_be)
-				
+
+#####################################################################
+# misc other basic features
+
+a, b = 1, 2
+print a, b
+a, b = b, a
+print a, b
+
+print a, b,
+print "continuation"
+
+if a < b:
+	print "less"
+elif b < a:
+	print "more"
+else:
+	print "same"
+
+# for-else / while-else: executes if the loop completes (doesn't use break)
+
+import random
+looper = 10
+while looper > 0:
+	if random.randint(1, 10) == looper:
+		print 'Random number hit:', looper
+		break
+	looper = looper - 1
+else:
+	print 'Random number did not hit'
 	
+#####################################################################
+# function parameters
+
+def my_func (param1, param2='default string'):
+	print param1, param2
 	
+my_func ('test')
+my_func ('club', 'sandwich')
+my_func ('club', param2='med')
+
+# careful!  L gets reused here
+
+def f(a, L=[]):
+    L.append(a)
+    return L
+
+print f(1)
+print f(2)
+print f(3)
+
+def funargs(dummy, *varargs, **keyvaluepairs):
+	print "Varargs"
+	for idx in range(len(varargs)):
+		print idx, varargs[idx]
+	print "KVPs"
+	for key in keyvaluepairs:
+		print key, keyvaluepairs[key]
+		
+funargs (1, 'fish', 'Alabama', named_param='Omega')
+		
+tuple = ['dog', 'New Jersey']
+dict = {"name": "Steve", "demeanor": "unpleasant"}
+funargs ('ignored', *tuple, **dict)
