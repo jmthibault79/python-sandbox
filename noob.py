@@ -190,3 +190,28 @@ funargs (1, 'fish', 'Alabama', named_param='Omega')
 tuple = ['dog', 'New Jersey']
 dict = {"name": "Steve", "demeanor": "unpleasant"}
 funargs ('ignored', *tuple, **dict)
+
+#####################################################################
+# lists: stack, queue, filter, map, reduce
+
+l = [1, 2, 3]
+print l.pop()
+l.append(4)
+print l
+
+from collections import deque
+q = deque(l)
+print q.popleft()
+print q.popleft()
+
+nums = [1, -2, 7, 5, 2, -11]
+
+def pos(x): return x >= 0
+print filter(pos, nums)
+
+def sqr(x): return x * x	
+print map(sqr, nums)
+
+def add(x, y): return x + y
+print reduce(add, nums)
+
