@@ -215,3 +215,12 @@ print map(sqr, nums)
 def add(x, y): return x + y
 print reduce(add, nums)
 
+#####################################################################
+# list comprehensions
+
+# wrong
+# posnums = [for x in nums if pos]
+# sqrnums = [sqr for x in nums]
+
+print [x * x for x in nums if x >= 0]
+print [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
