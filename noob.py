@@ -224,3 +224,16 @@ print reduce(add, nums)
 
 print [x * x for x in nums if x >= 0]
 print [(x, y) for x in [1,2,3] for y in [3,1,4] if x != y]
+
+#####################################################################
+# sets
+
+numbers = set([1, 2, 3])
+letters = set("hello")
+print letters
+print numbers & letters
+print numbers - letters
+
+morenumbers = {x for x in range(3)}
+print morenumbers
+print numbers ^ morenumbers
