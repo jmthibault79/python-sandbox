@@ -258,4 +258,16 @@ alphanumeric = { 'D': 8, 'E': 9, 'F': 2 }
 for key, val in alphanumeric.iteritems():
 	print key, val
 
+#####################################################################
+# modules and packages
+
+# see filesystem for details
+
+import my_module
+import sys
+sys.path.append('mod_dir')
+import my_other_module
+import my_package.my_third_module
+from my_other_package import *
+
 	
