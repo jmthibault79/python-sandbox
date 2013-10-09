@@ -242,3 +242,20 @@ print numbers ^ morenumbers		# in one but not both
 # dictionary comprehensions
 
 print {x: x**2 for x in (2, 4, 6)}
+
+#####################################################################
+# more iterating
+
+letters = ['A', 'B', 'C']
+for idx, val in enumerate(letters):
+	print idx, val
+	
+numbers = [5, 6, 7]
+for key, val in zip(letters, numbers):
+	print key, val
+
+alphanumeric = { 'D': 8, 'E': 9, 'F': 2 }
+for key, val in alphanumeric.iteritems():
+	print key, val
+
+	
