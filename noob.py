@@ -236,4 +236,9 @@ print numbers - letters
 
 morenumbers = {x for x in range(3)}
 print morenumbers
-print numbers ^ morenumbers
+print numbers ^ morenumbers		# in one but not both
+
+#####################################################################
+# dictionary comprehensions
+
+print {x: x**2 for x in (2, 4, 6)}
