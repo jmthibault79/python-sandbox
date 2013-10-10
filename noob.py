@@ -300,3 +300,30 @@ newdict = pickle.load(pfile)
 pfile.close()
 
 print newdict
+
+#####################################################################
+# exceptions
+
+def divide(x, y):
+	try:
+		result = x / y
+	except ZeroDivisionError as zde:
+		print "Exception:",
+		print type(zde), zde.args
+	except (RuntimeError, TypeError, NameError):
+		print "Something very wrong happened"
+	except:
+		print "Unknown Exception: re-raising"
+		raise
+	else:
+		print "no exception: result is", result
+	finally:
+		print "and finally"
+		
+divide(4, 2)
+divide(4, 0)
+divide(4, 'lemons')
+
+# closes the file automatically
+with open("pickle") as f:
+    pass
