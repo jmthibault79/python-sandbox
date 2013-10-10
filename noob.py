@@ -270,4 +270,14 @@ import my_other_module
 import my_package.my_third_module
 from my_other_package import *
 
+#####################################################################
+# string formatting
+
+print 'String {} and int {:3d} and float {:10f}'.format("HELLO", 70, 1.234567)
+print 'Positional {0}, {1:5}, and keyword {fancy}.'.format('a', 'b', fancy='c')
+
+outdict = { 'happy': 1, 'eraser': 33 }
+print 'Number {happy} and number {eraser}'.format(**outdict) 
+
+print 'Oppa %s style' % 'sprintf'
 	
