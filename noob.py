@@ -280,4 +280,23 @@ outdict = { 'happy': 1, 'eraser': 33 }
 print 'Number {happy} and number {eraser}'.format(**outdict) 
 
 print 'Oppa %s style' % 'sprintf'
-	
+
+#####################################################################
+# pickle/unpickle
+
+import pickle
+
+pdict = { 'pickles': True, 'peanut butter': 'very true',
+	'not_so_much': [ 'eggs', 'onions', 'bananas' ] }
+
+print pdict
+
+pfile = open ('pickle', 'w')
+pickle.dump(pdict, pfile)
+pfile.close()
+
+pfile = open ('pickle', 'r')
+newdict = pickle.load(pfile)
+pfile.close()
+
+print newdict
