@@ -327,3 +327,82 @@ divide(4, 'lemons')
 # closes the file automatically
 with open("pickle") as f:
     pass
+
+#####################################################################
+# classes
+
+class Classy:
+	"""Check out my docstring"""
+	
+	mydata = "uniitialized"
+	
+	# always need to use the first param for the class itself
+	# doesn't have to be called self, but that's the convention
+	def func(self):
+		print "We got the func"
+		
+	def __init__(self):
+		self.mydata = "initialized"
+		
+	def getter(self):
+		return self.mydata
+		
+	alsogetter = getter
+		
+x = Classy()
+print x.__doc__
+x.func()
+print x.getter()
+x.mydata = "haxored"
+print x.getter()
+print x.alsogetter()
+stillgetter = x.getter
+print stillgetter()
+print Classy.getter(x)
+
+class StayClassy(Classy):		
+	def __init__(self):
+		self.mydata = "reinitialized"
+		
+y = StayClassy()
+print y.getter()
+print isinstance(y, Classy)
+print issubclass(StayClassy, Classy)
+print issubclass(Classy, Classy)
+
+class LeelooMulticlass(StayClassy, Classy):
+	pass
+	
+z = LeelooMulticlass()
+print z.getter()
+
+class ListIter:
+    """A pointless wrapper to a list to demonstrate how to make a class iterable"""
+    def __init__(self, list):
+        self.list = list # note that we don't need to pre-declare it!
+        
+    # __iter__ must return an object with next() defined
+    # so we might as well make it the same class
+    def __iter__(self):
+        return self
+        
+    def next(self):
+        if self.list:
+        	retval, self.list = self.list[0], self.list[1:]
+        	return retval
+        else:
+            raise StopIteration
+
+for i in "abc":
+	print i
+	
+for i in ListIter("abc"):
+	print i
+	
+def ListGenerator(list):
+	for element in list:
+		yield element
+
+for i in ListGenerator("abc"):
+	print i
+		
