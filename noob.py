@@ -187,9 +187,9 @@ def funargs(dummy, *varargs, **keyvaluepairs):
 		
 funargs (1, 'fish', 'Alabama', named_param='Omega')
 		
-tuple = ['dog', 'New Jersey']
+list = ['dog', 'New Jersey']
 dict = {"name": "Steve", "demeanor": "unpleasant"}
-funargs ('ignored', *tuple, **dict)
+funargs ('ignored', *list, **dict)
 
 #####################################################################
 # lists: stack, queue, filter, map, reduce
@@ -376,7 +376,7 @@ class LeelooMulticlass(StayClassy, Classy):
 z = LeelooMulticlass()
 print z.getter()
 
-class ListIter:
+class ListIterator:
     """A pointless wrapper to a list to demonstrate how to make a class iterable"""
     def __init__(self, list):
         self.list = list # note that we don't need to pre-declare it!
@@ -396,7 +396,7 @@ class ListIter:
 for i in "abc":
 	print i
 	
-for i in ListIter("abc"):
+for i in ListIterator("abc"):
 	print i
 	
 def ListGenerator(list):
